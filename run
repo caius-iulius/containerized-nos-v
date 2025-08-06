@@ -1,0 +1,5 @@
+#!/bin/sh
+
+docker build --tag nosv:latest ./nosvImage
+docker build --tag nodes:latest ./nodesImage
+cd ompssCompose && docker-compose up

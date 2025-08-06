@@ -1,0 +1,27 @@
+volumes:
+    shm:
+        driver: local
+        driver_opts:
+            type: tmpfs
+            device: tmpfs
+
+services:
+    writer:
+        build: .
+        command: ./writer
+        volumes:
+            - shm:/dev/shm
+    reader:
+        build: .
+        command: ./reader
+        depends_on:
+            - writer
+        volumes:
+            - shm:/dev/shm
+    shell:
+        image: ubuntu:latest
+        command: bash
+        stdin_open: true
+        tty: true
+        volumes:
+            - shm:/dev/shm

@@ -1,0 +1,33 @@
+volumes:
+    shm:
+        driver: local
+        driver_opts:
+            type: tmpfs
+            device: tmpfs
+            o: size=2g
+
+services:
+    first:
+        build: .
+        command: ./basic_init
+        volumes:
+            - shm:/dev/shm/nosv
+
+    second:
+        build: .
+        command: ./basic_init
+        depends_on:
+            - first
+        pid: "service:first"
+        volumes:
+            - shm:/dev/shm/nosv
+
+    third:
+        build: .
+        command: ./basic_init
+        depends_on:
+            - first
+            - second
+        pid: "service:first"
+        volumes:
+            - shm:/dev/shm/nosv

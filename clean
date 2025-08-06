@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd ompssCompose && docker compose down --rmi all --volumes --remove-orphans
+docker rmi nodes:latest nosv:latest
