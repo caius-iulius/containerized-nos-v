@@ -1,0 +1,6 @@
+[submodule "nosvImage/nos-v"]
+	path = nosvImage/nos-v
+	url = https://github.com/caius-iulius/nos-v.git
+[submodule "nodesImage/nodes"]
+	path = nodesImage/nodes
+	url = https://github.com/bsc-pm/nodes.git
