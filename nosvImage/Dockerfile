@@ -2,14 +2,14 @@ FROM ubuntu:latest
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get install -y \
-    git \
     automake \
     autoconf \
     libtool \
     pkg-config \
     build-essential \
     numactl \
-    libnuma-dev
+    libnuma-dev \
+    build-essential # only needed by NODES, see its dockerfile for details
 
 WORKDIR /opt
 

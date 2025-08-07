@@ -1,14 +1,13 @@
 FROM nosv:latest
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && \
-    apt-get install -y \
-    git \
-    automake \
-    autoconf \
-    libtool \
-    pkg-config \
-    build-essential \
-    libboost-all-dev
+# RUN apt-get install -y \
+#     git \
+#     automake \
+#     autoconf \
+#     libtool \
+#     pkg-config \
+#     build-essential \
+#     libboost-all-dev
 
 WORKDIR /opt
 

@@ -18,6 +18,8 @@ services:
     first:
         build: .
         command: ./matmul 8192 8192 4096 64
+        depends_on:
+            - sidecar
         pid: "service:sidecar"
         volumes:
             - shm:/dev/shm/nosv
@@ -25,6 +27,8 @@ services:
     second:
         build: .
         command: ./matmul 8192 8192 4096 64
+        depends_on:
+            - sidecar
         pid: "service:sidecar"
         volumes:
             - shm:/dev/shm/nosv
@@ -32,6 +36,8 @@ services:
     third:
         build: .
         command: ./matmul 8192 8192 4096 64
+        depends_on:
+            - sidecar
         pid: "service:sidecar"
         volumes:
             - shm:/dev/shm/nosv
@@ -39,6 +45,8 @@ services:
     fourth:
         build: .
         command: ./matmul 8192 8192 4096 64
+        depends_on:
+            - sidecar
         pid: "service:sidecar"
         volumes:
             - shm:/dev/shm/nosv
