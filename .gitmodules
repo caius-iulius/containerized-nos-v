@@ -1,9 +1,9 @@
-[submodule "nosvImage/nos-v"]
-	path = nosvImage/nos-v
-	url = https://github.com/caius-iulius/nos-v.git
-[submodule "nodesImage/nodes"]
-	path = nodesImage/nodes
-	url = https://github.com/bsc-pm/nodes.git
-[submodule "ovniImage/ovni"]
-	path = ovniImage/ovni
+[submodule "images/ovni"]
+	path = images/ovni
 	url = https://github.com/bsc-pm/ovni.git
+[submodule "images/nos-v"]
+	path = images/nos-v
+	url = https://github.com/caius-iulius/nos-v.git
+[submodule "images/nodes"]
+	path = images/nodes
+	url = https://github.com/bsc-pm/nodes.git
