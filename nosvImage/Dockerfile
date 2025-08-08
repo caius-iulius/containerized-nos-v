@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ovni:latest
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get install -y \
@@ -17,7 +17,9 @@ COPY ./nos-v /opt/nos-v
 WORKDIR /opt/nos-v
 
 RUN autoreconf -f -i -v
-RUN ./configure && make all
+RUN ./configure \
+    --with-ovni=/ \
+    && make -j16 all
 
 # shared memory isn't preserved across containers, so we need to create it right before running the tests
 # RUN mkdir /dev/shm/nosv && make check

@@ -16,8 +16,9 @@ WORKDIR /opt/nodes
 
 RUN autoreconf -f -i -v
 RUN ./configure \
+    --with-ovni=/ \
     --with-nosv=/ \
-    && make all
+    && make -j16 all
 
 RUN make install && ldconfig
 

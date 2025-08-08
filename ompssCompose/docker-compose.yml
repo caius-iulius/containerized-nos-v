@@ -17,36 +17,56 @@ services:
 
     first:
         build: .
+        hostname: container
+        environment:
+            - NOSV_CONFIG_OVERRIDE=instrumentation.version=none
+            - NOSV_APPID=1
         command: ./matmul 8192 8192 4096 64
         depends_on:
             - sidecar
         pid: "service:sidecar"
         volumes:
             - shm:/dev/shm/nosv
+            - ./ovni:/app/ovni
 
     second:
         build: .
+        hostname: container
+        environment:
+            - NOSV_CONFIG_OVERRIDE=instrumentation.version=none
+            - NOSV_APPID=2
         command: ./matmul 8192 8192 4096 64
         depends_on:
             - sidecar
         pid: "service:sidecar"
         volumes:
             - shm:/dev/shm/nosv
+            - ./ovni:/app/ovni
 
     third:
         build: .
+        hostname: container
+        environment:
+            - NOSV_CONFIG_OVERRIDE=instrumentation.version=none
+            - NOSV_APPID=3
         command: ./matmul 8192 8192 4096 64
         depends_on:
             - sidecar
         pid: "service:sidecar"
         volumes:
             - shm:/dev/shm/nosv
+            - ./ovni:/app/ovni
 
     fourth:
         build: .
+        hostname: container
+        environment:
+            - NOSV_CONFIG_OVERRIDE=instrumentation.version=none
+            - NOSV_APPID=4
         command: ./matmul 8192 8192 4096 64
         depends_on:
             - sidecar
         pid: "service:sidecar"
         volumes:
             - shm:/dev/shm/nosv
+            - ./ovni:/app/ovni

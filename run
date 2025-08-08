@@ -1,5 +1,7 @@
 #!/bin/sh
 
+docker build --tag ovni:latest ./ovniImage
 docker build --tag nosv:latest ./nosvImage
+# docker build --tag nosv-sidecar:latest ./sidecarImage
 docker build --tag nodes:latest ./nodesImage
 cd ompssCompose && docker-compose up
