@@ -9,7 +9,7 @@ RUN apt-get update && \
     build-essential \
     numactl \
     libnuma-dev \
-    build-essential # only needed by NODES, see its dockerfile for details
+    libboost-all-dev # only needed by NODES, see its dockerfile for details
 
 WORKDIR /opt
 
